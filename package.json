@@ -1,20 +1,34 @@
 {
-  "name": "Discord-Bot",
-  "version": "1.0.0",
-  "description": "",
-  "main": "index.js",
-  "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "node ./src/jeffrey.js",
-    "dev": "nodemon ./src/jeffrey.js"
-  },
-  "keywords": [],
-  "author": "",
-  "license": "ISC",
-  "dependencies": {
-    "discord.js": "^12.5.1",
-    "dotenv": "^8.2.0",
-    "opusscript": "0.0.7",
-    "ytdl-core": "^4.4.5"
-  }
+	"name": "ggbot",
+	"version": "1.0.0",
+	"type": "module",
+	"description": "",
+	"main": "index.js",
+	"scripts": {
+		"test": "echo \"Error: no test specified\" && exit 1",
+		"start": "node dist/index.js",
+		"dev": "node --trace-deprecation --import 'data:text/javascript,import { register } from \"node:module\"; import { pathToFileURL } from \"node:url\"; register(\"ts-node/esm\", pathToFileURL(\"./\"));' src/index.ts",
+		"deploy-commands": "node --no-warnings --trace-deprecation --import 'data:text/javascript,import { register } from \"node:module\"; import { pathToFileURL } from \"node:url\"; register(\"ts-node/esm\", pathToFileURL(\"./\"));' src/deploy-commands.ts",
+		"build": "tsc"
+	},
+	"keywords": [],
+	"author": "",
+	"license": "ISC",
+	"dependencies": {
+		"@discordjs/opus": "^0.10.0",
+		"@discordjs/voice": "^0.18.0",
+		"@distube/ytdl-core": "^4.16.4",
+		"discord.js": "^14.18.0",
+		"dotenv": "^8.2.0",
+		"mineflayer": "^4.26.0",
+		"opusscript": "0.0.7",
+		"play-dl": "^1.9.7",
+		"sodium-native": "^4.3.3"
+	},
+	"devDependencies": {
+		"@types/node": "^22.13.8",
+		"nodemon": "^3.1.9",
+		"ts-node": "^10.9.2",
+		"typescript": "^5.8.2"
+	}
 }
